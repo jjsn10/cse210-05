@@ -14,6 +14,7 @@ class Director:
             video_service (VideoService): An instance of VideoService.
         """
         self._video_service = video_service
+        self._is_game_over = False
         
     def start_game(self, cast, script):
         """Starts the game using the given cast and script. Runs the main game loop.
@@ -39,4 +40,6 @@ class Director:
         """
         actions = script.get_actions(group)    
         for action in actions:
-            action.execute(cast, script)          
+            action.execute(cast, script)     
+            
+            

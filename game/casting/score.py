@@ -14,7 +14,10 @@ class Score(Actor):
     """
     def __init__(self):
         super().__init__()
-        self._points = 0
+
+        self._points1 = 0
+        self._points2 = 0
+
         self.add_points(0)
 
     def add_points(self, points):
@@ -23,5 +26,13 @@ class Score(Actor):
         Args:
             points (int): The points to add.
         """
-        self._points += points
-        self.set_text(f"Score: {self._points}")
+        self._points1 += points
+        self._points2 += points
+
+        self.set_text(f" Player: {self._points1}                                                                                                             Player: {self._points2}")
+    
+    def getPoints1(self):
+        return self._points1 
+    
+    def getPoints2(self):
+        return self._points2 
